@@ -1,18 +1,17 @@
 import './ExpenseItem.css';
 // Our first custom component
-function ExpenseItem() {
-    /* We add here fake data our app will use dynamically
-    cause we don't want to use hardcoded data */
-    const expenseDate = new Date(2021, 2, 28);
-    const expenseTitle = 'Bike insurance';
-    const expenseAmount = 99;
-  // The parenthesis are not mandatory here
+/* In React we won't use many parameters like in regular JS, we'll use only one parameter named usually props
+   that will store all our props/
+   props will receive key value pair to precises.
+*/
+function ExpenseItem(props) {
+  // By using props we can now take our data from outise our ExenseItem.js component 
   return (
     <div className="expense-item">
-      <div>{expenseDate.toISOString}</div>
+      <div>{props.date.toISOString}</div>
       <div className="expense-item__description">
-        <h2>{/* Dynamic value */ expenseTitle}{/*Hardcoded value: Bike insurance*/}</h2>
-        <div className="expense-item__price">{expenseAmount}€</div>
+        <h2>{props.title}</h2>
+        <div className="expense-item__price">{props.amount}€</div>
       </div>
     </div>
   );
