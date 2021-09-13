@@ -1,5 +1,6 @@
 import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css';
+
 // Our first custom component
 /* In React we won't use many parameters like in regular JS, we'll use only one parameter named usually props
    that will store all our props/
