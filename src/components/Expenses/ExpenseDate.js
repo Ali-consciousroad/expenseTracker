@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExpenseDate.css';
-function ExpenseDate(props) {
+const ExpenseDate = (props) => {
     // By using props we can now take our data from outside our ExpenseItem.js component 
     // Good practice: To keep our code clean, we take out the logic from the JSX code
     const month = props.date.toLocaleString('en-US', { month: 'long' });

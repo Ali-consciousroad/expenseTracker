@@ -8,7 +8,7 @@ import "./ExpenseItem.css";
    that will store all our props/
    props will receive key value pair to precises.
 */
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   return (
     <Card className="expense-item">
       {/*<ExpenseDate></ExpenseDate>*/}

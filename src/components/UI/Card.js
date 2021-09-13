@@ -8,7 +8,7 @@ import "./Card.css";
     will do just that.
 */
 
-function Card(props) {
+const Card = (props) => {
   // Withtout the withe space after "card" the app won't be displayed properly!!! Why? 
   /* Because Card is a custom component and not a <div> like before, 
      we need to explicitly accept all the added css class.

@@ -31,7 +31,7 @@ import Expenses from "./components/Expenses/Expenses";
       },
     ];
 
-function App() {
+const App = () => {
 
   // Show what JSX does behind the scene
   // If we use React like this, we need to import React

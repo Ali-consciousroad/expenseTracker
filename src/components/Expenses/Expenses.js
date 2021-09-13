@@ -3,7 +3,7 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./Expenses.css";
 
-function Expenses(props) {
+const Expenses = (props) => {
   return (
     /* props needed because the used attributes are coming from the expenses array in the App.js file */
     <Card className="expenses">
