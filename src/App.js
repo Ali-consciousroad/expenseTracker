@@ -5,7 +5,7 @@ import React from 'react';
 
 // Import our newly custom built component
 // import ExpenseItem from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
     // 4 objects added in our expenses array
     // expenses const given (udemy resource folder)
