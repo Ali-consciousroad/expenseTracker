@@ -1,3 +1,5 @@
+import React from 'react';
+
 // We can find the code transformed in JS in the chrome browser console 
 // main.chunk.js (from line 43)
 
@@ -30,7 +32,19 @@ import Expenses from "./components/Expenses";
     ];
 
 function App() {
+
+  // Show what JSX does behind the scene
+  // If we use React like this, we need to import React
+  
+  // return React.createElement(
+  //   'div', 
+  //   {}, 
+  //   React.createElement('h2', {}, "Let's get started"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
     
+  // Same code written in JSX
+
   return (
     /* Our JSX code */
     <div>

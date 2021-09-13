@@ -1,3 +1,4 @@
+import React from 'react';
 import './ExpenseDate.css';
 function ExpenseDate(props) {
     // By using props we can now take our data from outside our ExpenseItem.js component 
