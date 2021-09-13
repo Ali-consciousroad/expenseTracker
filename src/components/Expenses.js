@@ -8,7 +8,7 @@ function Expenses(props) {
     const expenses = [
         {
           id: 'e1',
-          title: 'Toilet Paper',
+          title: 'New Desk Chair',
           amount: 94.12,
           date: new Date(2020, 7, 14),
         },
@@ -28,7 +28,7 @@ function Expenses(props) {
       ];
 
   return (
-    <div>
+    <div className="expenses">
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
