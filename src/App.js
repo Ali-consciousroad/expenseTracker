@@ -1,11 +1,12 @@
 import React from 'react';
-
 // We can find the code transformed in JS in the chrome browser console 
 // main.chunk.js (from line 43)
 
 // Import our newly custom built component
 // import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from './components/NewExpense/NewExpense';
+
 
     // 4 objects added in our expenses array
     // expenses const given (udemy resource folder)
@@ -49,7 +50,7 @@ const App = () => {
     /* Our JSX code */
     <div>
       {/* A comment inside some JSX code */}
-      <h2>Let's get started!</h2>
+      <NewExpense />
       <p>This is also visible</p>
       <Expenses items={expenses} />
     </div>
