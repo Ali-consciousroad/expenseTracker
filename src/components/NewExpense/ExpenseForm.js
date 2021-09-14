@@ -20,13 +20,13 @@ const ExpenseForm = () => {
   // document.getElementById('').addEventListener('click', (event) => {})
   // The same is true here with React
   const titleChangeHandler = (event) => {
-    console.log(event);
+    // console.log(event);
     // Names found in the console: This will display the input value
-    console.log(event.target.value);
+    // console.log(event.target.value);
 
     // Store the value in our state
     // Used with multiple states
-    // setEnteredTitle(event.target.value);
+    setEnteredTitle(event.target.value);
 
     // New way with one state
     // setUserInput({
@@ -43,7 +43,7 @@ const ExpenseForm = () => {
   };
 
   const amountChangeHandler = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setEnteredAmount(event.target.value);
     // setUserInput({
     //   ...userInput,
@@ -51,7 +51,7 @@ const ExpenseForm = () => {
     // });
   };
   const dateChangeHandler = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setEnteredDate(event.target.value);
     // setUserInput({
     //   ...userInput,
@@ -59,8 +59,21 @@ const ExpenseForm = () => {
     // });
   };
 
+  const submitHandler = (event) => {
+    /* Prevent the default JS behavior that cause the whole page to refresh 
+    by clicking on the submit button */
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredTitle, 
+      amount: enteredAmount, 
+      date: new Date (enteredDate)
+    };
+    console.log(expenseData);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
