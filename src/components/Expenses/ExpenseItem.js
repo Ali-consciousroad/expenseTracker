@@ -12,8 +12,10 @@ import "./ExpenseItem.css";
 const ExpenseItem = (props) => {
   // We use destructuring to store the 2 values inside the array returned by the useState() hook
   // Always 2 values: A constant an a state updating function 
+  /* We can use a const even tough title is updated because we don't use title = "updated"
+  We use setTitle() and this will work to update the title thanks to React */
   const [title, setTitle] = useState(props.title); // Can be used inside React function
-  
+  console.log('ExpenseItem evaluated by React');
   /* Not a must do, but useful to add handler in the name of our function 
      so we know that this function react to an event and is not used elsewhere in our code */
   // Here we call the clickHandler function 
@@ -21,7 +23,8 @@ const ExpenseItem = (props) => {
   const clickHandler = () => {
     /* This will not only store a new value but reavalute again the component this special function is in 
     when the state changes */
-    setTitle('Updated!');  
+    // Call the updating function
+    setTitle('Updated!'); // State change
     // title = "Updated"; // This will not work
     console.log(title); 
   };
