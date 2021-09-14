@@ -9,6 +9,19 @@ import "./ExpenseItem.css";
    props will receive key value pair to precises.
 */
 const ExpenseItem = (props) => {
+
+  // Component logic
+  
+  /* Not a must do, but useful to add handler in the name of our function 
+     so we know that this function react to an event and is not used elsewhere in our code */
+  
+  // Here we call the clickHandler function 
+  // function clickHandler()   // Old JS syntax
+  const clickHandler = () => {
+    console.log('Clicked!!!');
+  };
+
+  // Component view
   return (
     <Card className="expense-item">
       {/*<ExpenseDate></ExpenseDate>*/}
@@ -20,6 +33,7 @@ const ExpenseItem = (props) => {
         <h2>{props.title}</h2>
         <div className="expense-item__price">{props.amount}€</div>
       </div>
+      <button onClick={(clickHandler)}>Change Title</button>
     </Card>
   );
 }
