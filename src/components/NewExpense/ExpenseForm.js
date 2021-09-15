@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+// Now that we have added a JSX attribute to the expenseForm that point to saveExpenseDataHandler (NewExpense.js page), 
+// We can use props here
+const ExpenseForm = (props) => {
   // We can have multiple state in a component
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
@@ -60,17 +62,21 @@ const ExpenseForm = () => {
   };
 
   const submitHandler = (event) => {
-    /* Because of the onSubmit() added on the form, we need to prrevent the default JS behavior 
+    /* Because of the onSubmit() added on the form, we need to prevent the default JS behavior 
     that cause the whole page to refresh by clicking on the add expense button */
     event.preventDefault();
-
+    
+    // Object needed to clear the field after writting the inputs  
     const expenseData = {
       title: enteredTitle, 
       amount: enteredAmount, 
       date: new Date (enteredDate)
     };
-    console.log(expenseData);
-    // We clear the field after it has been completed
+    
+    // console.log(expenseData);
+    // Here we ask the function to be executed
+    props.onSaveExpenseData(expenseData);
+    // Clear the input field after completing the form
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
