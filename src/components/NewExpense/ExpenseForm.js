@@ -61,26 +61,25 @@ const ExpenseForm = (props) => {
     // });
   };
 
-  const submitHandler = (event) => {
-    /* Because of the onSubmit() added on the form, we need to prevent the default JS behavior 
-    that cause the whole page to refresh by clicking on the add expense button */
-    event.preventDefault();
-    
-    // Object needed to clear the field after writting the inputs  
-    const expenseData = {
-      title: enteredTitle, 
-      amount: enteredAmount, 
-      date: new Date (enteredDate)
+    const submitHandler = (event) => {
+      /* Because of the onSubmit() added on the form, we need to prevent the default JS behavior 
+      that cause the whole page to refresh by clicking on the add expense button */
+      event.preventDefault();
+      
+      // Object needed to clear the field after writting the inputs  
+      const expenseData = {
+        title: enteredTitle, 
+        amount: enteredAmount, 
+        date: new Date (enteredDate)
+      };
+      // console.log(expenseData);
+      // Here we ask the function to be executed
+      props.onSaveExpenseData(expenseData);
+      // Clear the input field after completing the form
+      setEnteredTitle('');
+      setEnteredAmount('');
+      setEnteredDate('');
     };
-    
-    // console.log(expenseData);
-    // Here we ask the function to be executed
-    props.onSaveExpenseData(expenseData);
-    // Clear the input field after completing the form
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('');
-  };
 
   return (
     <form onSubmit={submitHandler}>
