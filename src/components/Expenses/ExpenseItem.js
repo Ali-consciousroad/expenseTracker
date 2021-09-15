@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
@@ -10,25 +10,6 @@ import "./ExpenseItem.css";
    props will receive key value pair to precises.
 */
 const ExpenseItem = (props) => {
-  // We use destructuring to store the 2 values inside the array returned by the useState() hook
-  // Always 2 values: A constant an a state updating function 
-  /* We can use a const even tough title is updated because we don't use title = "updated"
-  We use setTitle() and this will work to update the title thanks to React */
-  const [title, setTitle] = useState(props.title); // Can be used inside React function
-  console.log('ExpenseItem evaluated by React');
-  /* Not a must do, but useful to add handler in the name of our function 
-     so we know that this function react to an event and is not used elsewhere in our code */
-  // Here we call the clickHandler function 
-  // function clickHandler()   // Old JS syntax
-  const clickHandler = () => {
-    /* This will not only store a new value but reavalute again the component this special function is in 
-    when the state changes */
-    // Call the updating function
-    setTitle('Updated!'); // State change
-    // title = "Updated"; // This will not work
-    console.log(title); 
-  };
-
   // Component view
   return (
     <Card className="expense-item">
@@ -38,10 +19,9 @@ const ExpenseItem = (props) => {
       we need to add an attribute to the imported <ExpenseDate /> component we use here */}
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
         <div className="expense-item__price">{props.amount}€</div>
       </div>
-      <button onClick={(clickHandler)}>Change Title</button>
     </Card>
   );
 }
