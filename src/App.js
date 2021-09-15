@@ -10,6 +10,7 @@ import NewExpense from './components/NewExpense/NewExpense';
 
     // 4 objects added in our expenses array
     // expenses const given (udemy resource folder)
+  const App = () => {
     const expenses = [
       {
         id: 'e1',
@@ -32,7 +33,10 @@ import NewExpense from './components/NewExpense/NewExpense';
       },
     ];
 
-const App = () => {
+    const addExpenseHandler = expense => {
+      console.log('In App.js');
+      console.log(expense);
+    };  
 
   // Show what JSX does behind the scene
   // If we use React like this, we need to import React
@@ -50,7 +54,7 @@ const App = () => {
     /* Our JSX code */
     <div>
       {/* A comment inside some JSX code */}
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <p>This is also visible</p>
       <Expenses items={expenses} />
     </div>
