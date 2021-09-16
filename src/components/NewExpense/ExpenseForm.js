@@ -68,9 +68,9 @@ const ExpenseForm = (props) => {
       
       // Object needed to clear the field after writting the inputs  
       const expenseData = {
-        title: enteredTitle, 
-        amount: enteredAmount, 
-        date: new Date (enteredDate)
+        title: enteredTitle,
+        amount: +enteredAmount,
+        date: new Date(enteredDate),
       };
       // console.log(expenseData);
       // Here we ask the function to be executed
