@@ -23,6 +23,7 @@ const Expenses = (props) => {
         {/* We get rid of the hardcoded data to display the expense dynamically thanks to the map() method */}
         {props.items.map((expense) => ( 
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
