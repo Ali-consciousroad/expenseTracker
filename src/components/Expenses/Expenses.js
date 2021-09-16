@@ -11,6 +11,12 @@ const Expenses = (props) => {
     // console.log(selectedYear);
     setFilteredYear(selectedYear);
   };
+
+  const filteredExpenses = props.items.filter(expense => {
+    // Compare the date to " filteredYear " (a string)
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <div>
       {/* props needed because the used attributes are coming from the expenses
@@ -21,7 +27,7 @@ const Expenses = (props) => {
           onChangeFilter={filterChangeHandler}
         />
         {/* We get rid of the hardcoded data to display the expense dynamically thanks to the map() method */}
-        {props.items.map((expense) => ( 
+        {filteredExpenses.map((expense) => ( 
           <ExpenseItem
             key={expense.id}
             title={expense.title}
